@@ -1,5 +1,5 @@
 # xonsh-scrapy-tabcomplete
-Tab completion for pacman in xonsh
+Tab completion for scrapy in xonsh
 
 <hr>
 
@@ -23,7 +23,7 @@ pip install git+<this repo url>
 ```
 
 ## Configuration
-To automatically load pacman completion at startup, put 
+To automatically load scrapy completion at startup, put
 ```console
 xontrib load scrapy_tabcomplete
 ```
