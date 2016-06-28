@@ -21,8 +21,6 @@ def scrapy_completer(prefix, line, begidx, endidx, ctx):
     Completes scrapy package commands, also caches `scrapy list` in $SCRAPY_CACHE
     for faster `list` and `check` completion.
     """
-    if 'scrapy shell' in line:
-        return set()
     to_spiders = ['scrapy crawl', 'scrapy check']
     if any(case in line for case in to_spiders):
         results = scrapy_get_spiders()
