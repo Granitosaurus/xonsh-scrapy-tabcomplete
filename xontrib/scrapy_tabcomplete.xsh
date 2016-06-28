@@ -10,7 +10,7 @@ def scrapy_get_spiders():
     cwd = os.getcwd()
     results = $SCRAPY_CACHE.get(cwd)
     if not results:
-        results = $(scrapy list).splitlines()
+        results = $(scrapy list 2> /dev/null).splitlines()
     if 'no active project' in ''.join(results):
         return set()
     $SCRAPY_CACHE[cwd] = results
