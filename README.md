@@ -5,7 +5,7 @@ Tab completion for scrapy in xonsh
 
 This provides tab completion for [scrapy](https://github.com/scrapy/scrapy) for `xonsh` konsole shell users.
 It provides auto-completion for commands and projects spiders.
-Project's spider names are also cached in $SCRAPY_CACHE for every project directory for faster completion
+Project's spider names are also cached in `$SCRAPY_CACHE` for every project directory for faster completion
 in `scrapy crawl` and `scrapy check` commands.
 
 If new spiders are added the cache is outdated and can be refreshed with `scrapy_clear_cache()`,
@@ -17,7 +17,7 @@ Just do a
 ```console
 pip install xonsh-scrapy-tabcomplete
 ```
-or you can clone the repo via pip
+or you can clone the repo via pip for the latest version
 ```console
 pip install git+<this repo url>
 ```
