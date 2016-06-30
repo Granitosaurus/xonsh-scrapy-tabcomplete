@@ -39,4 +39,7 @@ def scrapy_clear_cache():
         pass
 
 aliases['scrapy_clear_cache'] = scrapy_clear_cache
-completer add 'scrapy' scrapy_completer "start"
+#add to list of completers
+__xonsh_completers__['scrapy'] = scrapy_completer
+#bump to top of list (otherwise bash completion interferes)
+__xonsh_completers__.move_to_end('scrapy', last=False)
