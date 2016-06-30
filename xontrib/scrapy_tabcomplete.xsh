@@ -23,15 +23,15 @@ def scrapy_completer(prefix, line, begidx, endidx, ctx):
     """
     if not line.startswith('scrapy'):
         return
-    if len(line.split()) > 1 and line.endswith(' ') or len(line.split()) > 2:
-        # "scrapy new " -> no complete (note the space)
-        return
     to_spiders = ['scrapy crawl', 'scrapy check']
     if any(case in line for case in to_spiders):
         results = scrapy_get_spiders()
         results = set([s for s in results
-                   if prefix in s.lower()])
+                       if prefix in s.lower()])
         return results
+    if len(line.split()) > 1 and line.endswith(' ') or len(line.split()) > 2:
+        # "scrapy new " -> no complete (note the space)
+        return
 
     all_commands = re.findall('  (\w+)  ', $(scrapy --help))
     blacklist = ['commands', 'version']
