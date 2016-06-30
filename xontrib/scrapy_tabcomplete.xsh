@@ -23,7 +23,7 @@ def scrapy_completer(prefix, line, begidx, endidx, ctx):
     """
     if not line.startswith('scrapy'):
         return
-    to_spiders = ['scrapy crawl', 'scrapy check']
+    to_spiders = ['scrapy crawl ', 'scrapy check ']
     if any(case in line for case in to_spiders):
         results = scrapy_get_spiders()
         results = set([s for s in results
@@ -41,7 +41,7 @@ def scrapy_completer(prefix, line, begidx, endidx, ctx):
         return all_commands, len(prefix)
     elif prefix:
         # "scrapy cra" -> suggest "crawl"
-        return [c for c in all_commands if prefix in c], len(prefix)
+        return [c for c in all_commands if c.startswith(prefix)], len(prefix)
     return set(all_commands)
 
 def scrapy_clear_cache():
