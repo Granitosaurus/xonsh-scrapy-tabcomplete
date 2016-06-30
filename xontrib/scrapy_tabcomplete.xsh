@@ -21,16 +21,28 @@ def scrapy_completer(prefix, line, begidx, endidx, ctx):
     Completes scrapy package commands, also caches `scrapy list` in $SCRAPY_CACHE
     for faster `list` and `check` completion.
     """
+    if not line.startswith('scrapy'):
+        return
+    if len(line.split()) > 1 and line.endswith(' ') or len(line.split()) > 2:
+        # "scrapy new " -> no complete (note the space)
+        return
     to_spiders = ['scrapy crawl', 'scrapy check']
     if any(case in line for case in to_spiders):
         results = scrapy_get_spiders()
         results = set([s for s in results
                    if prefix in s.lower()])
         return results
-    if line.startswith('scrapy'):
-        all_commands = re.findall('  (\w+)  ', $(scrapy --help))
-        blacklist = ['commands', 'version']
-        return set(c for c in all_commands if c not in blacklist)
+
+    all_commands = re.findall('  (\w+)  ', $(scrapy --help))
+    blacklist = ['commands', 'version']
+    all_commands = [c for c in all_commands if c not in blacklist]
+    if prefix in all_commands:
+        # "scrapy crawl" -> suggest replacing crawl with other command
+        return all_commands, len(prefix)
+    elif prefix:
+        # "scrapy cra" -> suggest "crawl"
+        return [c for c in all_commands if prefix in c], len(prefix)
+    return set(all_commands)
 
 def scrapy_clear_cache():
     try:
