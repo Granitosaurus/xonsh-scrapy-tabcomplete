@@ -20,6 +20,7 @@ setup(
         "Intended Audience :: End Users/Desktop",
         "Operating System :: POSIX",
         "Programming Language :: Python",
+        "Programming Language :: Python :: 3.5",
         "License :: OSI Approved :: GNU General Public License v3 or later (GPLv3+)",
     ]
 )
