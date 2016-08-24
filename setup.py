@@ -3,7 +3,7 @@ from setuptools import setup
 
 setup(
     name="xonsh-scrapy-tabcomplete",
-    version="0.25",
+    version="0.3",
     license="GPLv3",
     url="https://github.com/Granitas/xonsh-scrapy-tabcomplete",
     description="scrapy tabcomplete support for the Xonsh shell",
