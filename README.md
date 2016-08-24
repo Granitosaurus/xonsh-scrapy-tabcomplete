@@ -1,9 +1,11 @@
 # xonsh-scrapy-tabcomplete
-Tab completion for scrapy in xonsh
+Tab completion for scrapy in xonsh 
 
 <hr>
-
-This provides tab completion for [scrapy](https://github.com/scrapy/scrapy) for `xonsh` konsole shell users.
+[![PyPi version](https://img.shields.io/pypi/v/xonsh-scrapy-tabcomplete.svg?style=flat-square)](https://pypi.python.org/pypi/xonsh-scrapy-tabcomplete)
+[![PyPi license](https://img.shields.io/pypi/l/xonsh-scrapy-tabcomplete.svg?style=flat-square)](https://pypi.python.org/pypi/xonsh-scrapy-tabcomplete)
+[![PyPi license](https://img.shields.io/pypi/pyversions/xonsh-scrapy-tabcomplete.svg?style=flat-square)](https://pypi.python.org/pypi/xonsh-scrapy-tabcomplete)  
+Provides tab completion for [scrapy](https://github.com/scrapy/scrapy) for `xonsh` console shell users.
 It provides auto-completion for commands and projects spiders.
 Project's spider names are also cached in `$SCRAPY_CACHE` for every project directory for faster completion
 in `scrapy crawl` and `scrapy check` commands.
