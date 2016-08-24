@@ -8,9 +8,7 @@ It provides auto-completion for commands and projects spiders.
 Project's spider names are also cached in `$SCRAPY_CACHE` for every project directory for faster completion
 in `scrapy crawl` and `scrapy check` commands.
 
-If new spiders are added the cache is outdated and can be refreshed with `scrapy_clear_cache()`,
-which clears the cache for current working directory.
-`scrapy_clear_cache` is stored in `aliases`.
+If new spiders are added the cache is outdated and can be refreshed with `scrapy_clear_cache` alias which is created by the contrib. It clears the cache for current working directory.
 
 ## Installation
 Just do a 
